@@ -1,0 +1,8 @@
+POST http://localhost:8080/kafka
+Content-Type: application/json
+
+{
+  "sender": "John",
+  "recipient": "Jane",
+  "content": "Hello, how are you?"
+}
