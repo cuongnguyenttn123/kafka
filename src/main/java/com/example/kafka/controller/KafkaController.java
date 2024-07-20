@@ -1,8 +1,9 @@
-package com.example.kafka;
+package com.example.kafka.controller;
 
-import com.example.kafka.dto.MessageDTO;
-import com.example.kafka.dto.NotificationDTO;
-import com.example.kafka.service.abcService;
+import com.example.kafka.dto.request.MessageDTO;
+import com.example.kafka.dto.response.NotificationDTO;
+import com.example.kafka.service.KafkaService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,10 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/kafka")
+@RequiredArgsConstructor
 public class KafkaController {
 
     @Autowired
-    abcService service;
+    KafkaService service;
 
     @PostMapping
     public String getTemplateKafka(@RequestBody MessageDTO messageDTO) {

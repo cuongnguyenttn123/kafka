@@ -1,15 +1,15 @@
 package com.example.kafka.service;
 
-import com.example.kafka.dto.NotificationDTO;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.kafka.dto.response.NotificationDTO;
+import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
-public class abcService {
-    @Autowired
-    KafkaTemplate<String, Object> kafkaTemplate;
+@RequiredArgsConstructor
+public class KafkaService {
+    private final KafkaTemplate<String, Object> kafkaTemplate;
 
     @Async
     public void asysc(NotificationDTO notificationDTO) {

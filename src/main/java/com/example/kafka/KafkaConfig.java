@@ -29,7 +29,7 @@ public class KafkaConfig {
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
         configProps.put(JsonSerializer.TYPE_MAPPINGS,
-                "messageDTO:com.example.kafka.dto.MessageDTO, notificationDTO:com.example.kafka.dto.NotificationDTO");
+                "messageDTO:com.example.kafka.dto.request.MessageDTO, notificationDTO:com.example.kafka.dto.response.NotificationDTO");
         return new DefaultKafkaProducerFactory<>(configProps);
     }
 
